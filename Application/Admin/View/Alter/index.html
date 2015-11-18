@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>公司注册页面</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/pintuer.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/admin.css">
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/pintuer.js"></script>
+    <script src="__PUBLIC__/js/respond.js"></script>
+    <script src="__PUBLIC__/js/admin.js"></script>
+    <link type="__PUBLIC__/image/x-icon" href="/favicon.ico" rel="shortcut icon" />
+    <link href="__PUBLIC__/favicon.ico" rel="bookmark icon" />
+</head>
+
+<body>
+<div class="lefter">
+   <div class="logo"></div>
+</div>
+<div class="righter nav-navicon" id="admin-nav">
+    <div class="mainer">
+    <div class="admin-navbar">
+            <span class="float-right">
+            	<!--<a class="button button-little bg-main" href="#" target="_blank">前台首页</a>-->
+                <a class="button button-little bg-yellow" href="__APP__/Home/Login/index">注销登录</a>
+            </span>
+            <ul class="nav nav-inline admin-nav">
+             <li class="active"><a href="__APP__/Admin/home/index" class="icon-home"> 开始</a>
+      <ul>
+				
+			<li><a href="__APP__/Admin/Publish/index">添加招聘信息</a></li>
+					<li><a href="__APP__/Admin/Addmes/index">添加政策信息</a></li>
+					<li><a href="__APP__/Admin/Change/index">修改密码</a></li>
+					<li><a href="__APP__/Admin/List/index">查看招聘信息</a></li>
+					<li><a href="__APP__/Admin/Meslist/index">查看政策信息</a></li>
+					
+					
+					
+                </li>
+          <!--<li><a href="system.html" class="icon-cog"></a>
+            		<ul>
+					<li><a href="#">全局设置</a></li>
+					<li class="active"><a href="#">系统设置</a>
+					</li><li><a href="#">会员设置</a></li>
+					<li><a href="#">积分大苏打似的设置</a></li></ul>
+                </li>---->
+            <!--<li><a href="content.html" class="icon-file-text"> 内容</a>
+					<ul>
+					<li><a href="#">添加招聘信息</a></li>
+					<li class="active"><a href="#">招聘信息管理</a></li>
+					<!--<li><a href="#">分类设置</a></li>
+					<li><a href="#">链接管理</a></li>
+					</ul>
+                </li>--->
+              <!--<li><a href="#" class="icon-shopping-cart"> 订单</a></li>
+                <li><a href="#" class="icon-user"> 会员</a></li>
+                <li><a href="#" class="icon-file"> 文件</a></li>
+                <li><a href="#" class="icon-th-list"> 栏目</a></li>-->
+            </ul>
+        </div>
+        <div class="admin-bread">
+            <span>您好，{$name}，欢迎您的光临。</span>
+            <ul class="bread">
+                <li><a href="index.html" class="icon-home"> 开始</a></li>
+                <li>后台首页</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="admin">
+	<div class="line-big">
+    	<div class="xm2">
+	
+        </div>
+        <div class="xm7">
+		<form action="__URL__/alter" method="post">
+		<volist name="list" id="vo">
+		<div class="form-group">
+    <div class="label"><label for="username">职位名称</label></div>
+    <div class="field">
+	<input type="hidden" value="{$vo.pid}" name="ID">
+      <input type="text" class="input" id="username" name="JOBNAME" size="50" data-validate="required:必填" value="{$vo.jobname}"" />
+    </div>
+  </div>
+  	<div class="form-group">
+                    <div class="label"><label for="readme">岗位职责</label></div>
+                    <div class="field">
+                    	<textarea class="input"  name="DUTY" rows="5" cols="50" value="{$vo.duty}" data-validate="required:职位描述">{$vo.duty}</textarea>
+                    </div>
+                </div>
+  <div class="form-group">
+                    <div class="label"><label for="readme">职位要求</label></div>
+                    <div class="field">
+                    	<textarea class="input"  name="REQUIREMENTS" rows="5" cols="50" value="{$vo.requirements}" data-validate="required:职位描述">{$vo.requirements}</textarea>
+                    </div>
+                </div>
+   <div class="form-group">
+                    <div class="label"><label for="keywords">月薪范围</label></div>
+                    <div class="field">
+                    	
+					<select class="input" name ="SALARY">
+					<option value="0">2000-3000</option>
+						<option value="1">5000-10000</option>
+							<option value ="3">15k-30k</option>
+								
+						</select>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <div class="label"><label for="keywords">学校名称</label></div>
+                    <div class="field">
+                    	
+					<select class="input" name ="SCHOOL">
+					<option value="哈尔滨理工大学">哈尔滨理工大学</option>
+						<option value="哈尔滨理工大学荣成校区">哈尔滨理工大学荣成校区</option>
+							
+								
+						</select>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <div class="label"><label for="keywords">最低学历</label></div>
+                    <div class="field">
+                    	
+					<select class="input" name ="DEGREE">
+					<option value="不限">不限</option>
+						<option value="大专">大专</option>
+							<option value ="本科">本科</option>
+								<option value="硕士">硕士</option>
+									
+						</select>
+                    </div>
+                </div>
+					<div class="form-group">
+    <div class="label"><label for="username">工作经验</label></div>
+    <div class="field">
+      <input type="text" class="input" id="username" name="EXPERIENCE" size="50" data-validate="required:必填" value="{$vo.experience}" />
+    </div>
+  </div>
+    <!--<div class="form-group">
+                    <div class="label"><label for="readme">职位描述</label></div>
+                    <div class="field">
+                    	<textarea class="input"  name="DESCRIPTION" rows="5" cols="50" placeholder="职位描述" data-validate="required:职位描述"></textarea>
+                    </div>
+                </div>-->
+								<div class="form-group">
+    <div class="label"><label for="username">福利</label></div>
+    <div class="field">
+      <input type="text" class="input" id="username" name="KEYWORD" size="50" data-validate="required:必填" value="{$vo.keyword}" />
+    </div>
+  </div>
+  <div class="form-button"><button class="button bg-main" type="submit">提交</button></div>
+  </volist>
+  </form>
+			<!--<div class="alert alert-yellow"><span class="close"></span><strong>注意：</strong>请填以下信息</div>-->
+			<!--<ul>
+			<li> aa</li>
+			</ul>-->
+				
+           <!-- <div class="alert">
+                <h4>拼图前端框架介绍</h4>
+                <p class="text-gray padding-top">拼图是优秀的响应式前端CSS框架，国内前端框架先驱及领导者，自动适应手机、平板、电脑等设备，让前端开发像游戏般快乐、简单、灵活、便捷。</p>
+            	<a target="_blank" class="button bg-dot icon-code" href="#"> 下载示例代码</a> 
+            	<a target="_blank" class="button bg-main icon-download" href="#"> 下载拼图框架</a> 
+            	<a target="_blank" class="button border-main icon-file" href="#"> 拼图使用教程</a>
+            </div>--->
+			<!--<div class="step">
+ <div class="step-bar complete" style="width:25%;"><span class="step-point icon-check"></span><span class="step-text">第一步</span></span></div>
+ <div class="step-bar active" style="width:25%;"><span class="step-point">2</span><span class="step-text">第二步</span></div>
+ 
+</div>--->
+
+      
+
+        </div>
+    </div>
+	
+    <!--<p class="text-right text-gray">基于<a class="text-gray" target="_blank" href="#">拼图前端框架</a>构建   来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>-->
+    
+  <!--  <div class="clearfix text-center">
+    	<a class="button button-big bg-main badge-corner" href="#" target="_blank">拼图最美中文后台-后翘<span class="badge bg-red">会员</span></a>
+        <br /><br />
+        <a href="#" target="_blank"><img src="images/index.jpg" class="img-responsive" alt="会员版-登录" /></a><br />
+        <a href="#" target="_blank"><img src="images/login.jpg" class="img-responsive" alt="会员版-首页" /></a>
+    </div>-->
+    <br />
+</div>
+<div class="fixed padding bg-blue bg-inverse doc-fixed-bottom fixed-bottom" data-style="fixed-bottom" data-offset-fixed="300">我先在底部呆着，到站了才回去。</div>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>审核企业信息</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/pintuer.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/admin.css">
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/pintuer.js"></script>
+    <script src="__PUBLIC__/js/respond.js"></script>
+    <script src="__PUBLIC__/js/admin.js"></script>
+    <link type="__PUBLIC__/image/x-icon" href="/favicon.ico" rel="shortcut icon" />
+    <link href="__PUBLIC__/favicon.ico" rel="bookmark icon" />
+	<script>
+	function check($cid){
+	 
+			document.getElementById($cid).innerHTML="";
+			
+	</script>
+</head>
+
+<body>
+<div class="lefter">
+  <div class="logo"></div>
+</div>
+<div class="righter nav-navicon" id="admin-nav">
+    <div class="mainer">
+         <div class="admin-navbar">
+            <span class="float-right">
+            	<!--<a class="button button-little bg-main" href="#" target="_blank">前台首页</a>-->
+                <a class="button button-little bg-yellow" href="__APP__/Home/Login/index">注销登录</a>
+            </span>
+            <ul class="nav nav-inline admin-nav">
+             <li class="active"><a href="__APP__/System/Index/index" class="icon-home"> 开始</a>
+      <ul>
+				
+					<li class="active"><a href="__APP__/System/Checkcom/index">审核企业信息</a></li>
+					<li><a href="__APP__/System/Checkbur">审核人事局</a></li>
+					
+					
+                </li>
+          <!--<li><a href="system.html" class="icon-cog"></a>
+            		<ul>
+					<li><a href="#">全局设置</a></li>
+					<li class="active"><a href="#">系统设置</a>
+					</li><li><a href="#">会员设置</a></li>
+					<li><a href="#">积分设置</a></li></ul>
+                </li>---->
+            <!--<li><a href="content.html" class="icon-file-text"> 内容</a>
+					<ul>
+					<li><a href="#">添加招聘信息</a></li>
+					<li class="active"><a href="#">招聘信息管理</a></li>
+					<!--<li><a href="#">分类设置</a></li>
+					<li><a href="#">链接管理</a></li>
+					</ul>
+                </li>--->
+              <!--<li><a href="#" class="icon-shopping-cart"> 订单</a></li>
+                <li><a href="#" class="icon-user"> 会员</a></li>
+                <li><a href="#" class="icon-file"> 文件</a></li>
+                <li><a href="#" class="icon-th-list"> 栏目</a></li>-->
+            </ul>
+        </div>
+        <div class="admin-bread">
+            <span>您好，admin，欢迎您的光临。</span>
+            <ul class="bread">
+                <li><a href="__APP__/System/Index/index" class="icon-home"> 开始</a></li>
+                <li>审核企业信息</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="admin">
+	<div class="line-big">
+    	<div class="xm2">
+	
+          
+        </div>
+        <div class="xm7">
+
+		<div class="panel">
+  <div class="panel-head"><strong>面板表格</strong></div>
+ <!-- <div class="panel-body">拼图，是国内一款开源的专业响应式网页前端框架，由HTML、CSS、Javascrip三者组合应用。提供的CSS、元件、动画、组件、模块等样式实现绝大多数的网页特效与响应功能，像玩积木、拼图游戏一样快速简单而富有乐趣的做前端开发。</div>--->
+
+<div class="table-responsive">
+<table class="table">
+  <tr><th>公司名称</th><th>公司领域</th><th>固定电话</th><th>邮箱</th><th>操作</th></tr>
+  <volist name="list" id="vo" empty="暂时没有数据">
+  <tr id="{$vo.cid}"><td>{$vo.cname}</td><td>{$vo.field}</td><td>{$vo.landline}</td><td>{$vo.cmail}</td><th><a class="button border-blue button-little" href="__APP__/System/Checkcom/check/id/{$vo.cid}">通过</a> <a class="button border-blue button-little" href="__APP__/System/Showcom/index/id/{$vo.cid}">查看</a></th></tr>
+</volist>
+</table>
+</div>
+   
+        </div>
+    </div>
+	
+    <!--<p class="text-right text-gray">基于<a class="text-gray" target="_blank" href="#">拼图前端框架</a>构建   来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>-->
+    
+  <!--  <div class="clearfix text-center">
+    	<a class="button button-big bg-main badge-corner" href="#" target="_blank">拼图最美中文后台-后翘<span class="badge bg-red">会员</span></a>
+        <br /><br />
+        <a href="#" target="_blank"><img src="images/index.jpg" class="img-responsive" alt="会员版-登录" /></a><br />
+        <a href="#" target="_blank"><img src="images/login.jpg" class="img-responsive" alt="会员版-首页" /></a>
+    </div>-->
+    <br />
+</div>
+
+
+</body>
+</html>

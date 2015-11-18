@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>政策信息详情</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/pintuer.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/admin.css">
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/pintuer.js"></script>
+    <script src="__PUBLIC__/js/respond.js"></script>
+    <script src="__PUBLIC__/js/admin.js"></script>
+    <link type="__PUBLIC__/image/x-icon" href="/favicon.ico" rel="shortcut icon" />
+    <link href="__PUBLIC__/favicon.ico" rel="bookmark icon" />
+</head>
+
+<body>
+<div class="lefter">
+  <div class="logo"></div>
+</div>
+<div class="righter nav-navicon" id="admin-nav">
+    <div class="mainer">
+        <div class="admin-navbar">
+            <span class="float-right">
+            	<!--<a class="button button-little bg-main" href="#" target="_blank">前台首页</a>-->
+                <a class="button button-little bg-yellow" href="__APP__/Home/Login/index">注销登录</a>
+            </span>
+            <ul class="nav nav-inline admin-nav">
+             <li class="active"><a href="__APP__/Admin/home/index" class="icon-home"> 开始</a>
+      <ul>
+				
+					<li><a href="__APP__/Admin/Publish/index">添加招聘信息</a></li>
+					<li><a href="__APP__/Admin/Addmes/index">添加政策信息</a></li>
+					<li><a href="__APP__/Admin/Change/index">修改密码</a></li>
+					<li><a href="__APP__/Admin/List/index">查看招聘信息</a></li>
+					<li class="active"><a href="__APP__/Admin/Meslist/index">查看政策信息</a></li>
+					
+					
+					
+                </li>
+          <!--<li><a href="system.html" class="icon-cog"></a>
+            		<ul>
+					<li><a href="#">全局设置</a></li>
+					<li class="active"><a href="#">系统设置</a>
+					</li><li><a href="#">会员设置</a></li>
+					<li><a href="#">积分设置</a></li></ul>
+                </li>---->
+            <!--<li><a href="content.html" class="icon-file-text"> 内容</a>
+					<ul>
+					<li><a href="#">添加招聘信息</a></li>
+					<li class="active"><a href="#">招聘信息管理</a></li>
+					<!--<li><a href="#">分类设置</a></li>
+					<li><a href="#">链接管理</a></li>
+					</ul>
+                </li>--->
+              <!--<li><a href="#" class="icon-shopping-cart"> 订单</a></li>
+                <li><a href="#" class="icon-user"> 会员</a></li>
+                <li><a href="#" class="icon-file"> 文件</a></li>
+                <li><a href="#" class="icon-th-list"> 栏目</a></li>-->
+            </ul>
+        </div>
+        <div class="admin-bread">
+            <span>您好，{$name}，欢迎您的光临。</span>
+            <ul class="bread">
+                <li><a href="__APP__/Admin/home/index" class="icon-home"> 开始</a></li>
+                <li><a href="__APP__/Admin/Meslist">返回到上一页</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="admin">
+	<div class="line-big">
+    	<div class="xm2">
+	
+        </div>
+        <div class="xm7">
+		<volist name="list" id="vo">
+	<div class="detail">
+  <h1>{$vo.title}</h1>
+  <p class="text-center">时间：{$vo.time} </p>
+   <p align="center">
+   <div class="banner">
+  <div class="carousel">
+     		<volist name='str' id='vo' empty='没有数据'>
+ <div class="item"><img class="img-responsive" width=350px; src="http://astoneman1-uploads.stor.sinaapp.com/{$vo}" /></p> </div>
+ 
+</br>
+</volist>
+  
+ 
+  </div>
+</div>   
+   </p>
+   <volist name="list" id="vo">
+  <p>{$vo.content}</p>
+ </volist>
+ </div>
+		</volist>
+		
+
+		
+		
+			<!--<div class="alert alert-yellow"><span class="close"></span><strong>注意：</strong>请填以下信息</div>-->
+			<!--<ul>
+			<li> aa</li>
+			</ul>-->
+				
+           <!-- <div class="alert">
+                <h4>拼图前端框架介绍</h4>
+                <p class="text-gray padding-top">拼图是优秀的响应式前端CSS框架，国内前端框架先驱及领导者，自动适应手机、平板、电脑等设备，让前端开发像游戏般快乐、简单、灵活、便捷。</p>
+            	<a target="_blank" class="button bg-dot icon-code" href="#"> 下载示例代码</a> 
+            	<a target="_blank" class="button bg-main icon-download" href="#"> 下载拼图框架</a> 
+            	<a target="_blank" class="button border-main icon-file" href="#"> 拼图使用教程</a>
+            </div>--->
+			<!--<div class="step">
+ <div class="step-bar complete" style="width:25%;"><span class="step-point icon-check"></span><span class="step-text">第一步</span></span></div>
+ <div class="step-bar active" style="width:25%;"><span class="step-point">2</span><span class="step-text">第二步</span></div>
+ 
+</div>--->
+
+      
+
+        </div>
+		<div class="xm3">
+		<volist name="company" id="vo">
+		<h2>{$vo.cname}</h2>
+		
+		
+		</br>
+		<img src="http://astoneman1-uploads.stor.sinaapp.com/{$vo.logo}" width="128" height="128" class="radius" />
+		<h3> 公司地址: {$vo.address}</h3>
+		<h3>公司主页 :{$vo.homepage}</h3>
+		<h3>公司领域:{$vo.field}</h3>
+		<h3>公司邮箱 :{$vo.cmail}</h3>
+		<h3>固定电话:{$vo.landline}</h3>
+		<h3>移动电话:{$vo.mobilephone}</h3>
+		</volist>
+		</div>
+    </div>
+	
+    <!--<p class="text-right text-gray">基于<a class="text-gray" target="_blank" href="#">拼图前端框架</a>构建   来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>-->
+    
+  <!--  <div class="clearfix text-center">
+    	<a class="button button-big bg-main badge-corner" href="#" target="_blank">拼图最美中文后台-后翘<span class="badge bg-red">会员</span></a>
+        <br /><br />
+        <a href="#" target="_blank"><img src="images/index.jpg" class="img-responsive" alt="会员版-登录" /></a><br />
+        <a href="#" target="_blank"><img src="images/login.jpg" class="img-responsive" alt="会员版-首页" /></a>
+    </div>-->
+    <br />
+</div>
+
+
+</body>
+</html>

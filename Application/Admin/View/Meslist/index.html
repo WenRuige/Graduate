@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>查看政策信息</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/pintuer.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/admin.css">
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/pintuer.js"></script>
+    <script src="__PUBLIC__/js/respond.js"></script>
+    <script src="__PUBLIC__/js/admin.js"></script>
+    <link type="__PUBLIC__/image/x-icon" href="/favicon.ico" rel="shortcut icon" />
+    <link href="__PUBLIC__/favicon.ico" rel="bookmark icon" />
+	<script>
+	function deletes($mid){
+	//alert($pid);
+	   if(confirm("确定删除吗")){
+         // location.href="确认后跳转的页面";
+		 $.post('__APP__/Admin/Meslist/delete',{mid:$mid},function(json){	
+					});
+			document.getElementById($mid).innerHTML="";
+      }else{
+         // location.href="取消后跳转的页面";
+      }
+	
+	
+	}
+	</script>
+</head>
+
+<body>
+<div class="lefter">
+    <div class="logo"></div>
+</div>
+<div class="righter nav-navicon" id="admin-nav">
+    <div class="mainer">
+        <div class="admin-navbar">
+            <span class="float-right">
+            	<!--<a class="button button-little bg-main" href="#" target="_blank">前台首页</a>-->
+                <a class="button button-little bg-yellow" href="__APP__/Home/Login/index">注销登录</a>
+            </span>
+            <ul class="nav nav-inline admin-nav">
+             <li class="active"><a href="__APP__/Admin/home/index" class="icon-home"> 开始</a>
+      <ul>
+				
+					<li><a href="__APP__/Admin/Publish/index">添加招聘信息</a></li>
+					<li><a href="__APP__/Admin/Addmes/index">添加政策信息</a></li>
+					<li><a href="__APP__/Admin/Change/index">修改密码</a></li>
+					<li><a href="__APP__/Admin/List/index">查看招聘信息</a></li>
+					<li class="active"><a href="__APP__/Admin/Meslist/index">查看政策信息</a></li>
+					
+					
+					
+                </li>
+          <!--<li><a href="system.html" class="icon-cog"></a>
+            		<ul>
+					<li><a href="#">全局设置</a></li>
+					<li class="active"><a href="#">系统设置</a>
+					</li><li><a href="#">会员设置</a></li>
+					<li><a href="#">积分设置</a></li></ul>
+                </li>---->
+            <!--<li><a href="content.html" class="icon-file-text"> 内容</a>
+					<ul>
+					<li><a href="#">添加招聘信息</a></li>
+					<li class="active"><a href="#">招聘信息管理</a></li>
+					<!--<li><a href="#">分类设置</a></li>
+					<li><a href="#">链接管理</a></li>
+					</ul>
+                </li>--->
+              <!--<li><a href="#" class="icon-shopping-cart"> 订单</a></li>
+                <li><a href="#" class="icon-user"> 会员</a></li>
+                <li><a href="#" class="icon-file"> 文件</a></li>
+                <li><a href="#" class="icon-th-list"> 栏目</a></li>-->
+            </ul>
+        </div>
+        <div class="admin-bread">
+            <span>您好，{$name}，欢迎您的光临。</span>
+            <ul class="bread">
+                <li><a href="__APP__/Admin/home/index" class="icon-home"> 开始</a></li>
+                <li>查看政策信息</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="admin">
+	<form method="post">
+    <div class="panel admin-panel">
+    	<div class="panel-head"><strong>内容列表</strong></div>
+        <div class="padding border-bottom">
+           
+        <a class="button border-blue button-little" href="__APP__/Admin/Addmes/">添加信息</a>
+			 <!--<input type="button" class="button button-small checkall" name="checkall" checkfor="id" value="全选" />
+            <input type="button" class="button button-small border-yellow" value="批量删除" />
+            <input type="button" class="button button-small border-blue" value="回收站" />-->
+        </div>
+        <table class="table table-hover">
+        	<tr><th width="200">名称</th><th width="100">时间</th><th width="100">操作</th></tr>
+			<volist name="list" id="vo">
+            <tr id="{$vo.mid}"></td><td><a href="__APP__/Admin/Showmes/index/id/{$vo.mid}">{$vo.title}</a></td><td>{$vo.time}</td><td><a class="button border-blue button-little" href="__APP__/Admin/Altermes/index/id/{$vo.mid}">修改</a> <a class="button border-yellow button-little" href="#" onclick="deletes({$vo.mid})">删除</a></td></tr>
+           </volist>
+        </table>
+		
+		{$page}
+		
+        <div class="panel-foot text-center">
+		
+            <ul class="pagination"><li><a href="#">上一页</a></li></ul>
+            <ul class="pagination pagination-group">
+			
+                <li></li>
+             
+            </ul>
+            <ul class="pagination"><li><a href="#">下一页</a></li></ul>
+        </div>
+    </div>
+    </form>
+    <br />
+   
+</div>
+
+
+</body>
+</html>

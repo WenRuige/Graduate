@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>后台管理-企业登录</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/pintuer.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/admin.css">
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/pintuer.js"></script>
+    <script src="__PUBLIC__/js/respond.js"></script>
+    <script src="__PUBLIC__/js/admin.js"></script>
+    <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon" />
+    <link href="/favicon.ico" rel="bookmark icon" />
+	<!--<script>
+	
+	function sendCode(){
+	
+		var str =$("input[name='PHONE']").val()	;
+	if(str==''){
+	alert("请填写手机号码");
+	
+	}else if(str.replace(/[^\x00-\xff]/g,"xx").length!=11){//正则表达式  获取填写手机号的长度
+	alert("请填写正确的手机号码");
+	
+	}else{//如果都没有的话  验证成功
+	$.ajax({
+								type: "POST",
+								//url: "__URL__/getPhone",
+								data: "PHONE="+$("input[name='PHONE']").val(),
+								success:function(data){
+											//alert(data);
+										}
+							});
+							}
+
+}
+	
+	
+	
+	</script>-->
+</head>
+
+<body>
+<div class="container">
+    <div class="line">
+        <div class="xs6 xm4 xs3-move xm4-move">
+            <br /><br />
+            <div class="media media-y">
+             <!--   <a href="#" target="_blank"><img src="images/logo.png" class="radius" alt="后台管理系统" /></a>--->
+            </div>
+   		<div class="layout bg-blue bg-inverse hidden-l">
+  <div class="container-layout height-big">
+    <span class="float-right">
+      <a href="http://astoneman1.sinaapp.com__APP__/Home/Register/index.html">注册</a>
+      <span class="text-little text-gray">|</span>
+      <a href="http://astoneman1.sinaapp.com__APP__/Home/Login/index.html">登录</a>
+      <span class="text-little text-gray">|</span>
+      <a href="#">联系</a>
+    </span>
+    欢迎使用毕业生供需管理系统
+  </div>
+</div>
+            <form action="__URL__/forget" method="post">
+            <div class="panel">
+                <div class="panel-head"><strong>
+				
+				{$list}
+				</strong></div>
+                <div class="panel-body" style="padding:30px;">
+				<div class="form-group">
+                        <div class="field field-icon-right">
+						<div class="label"><label for="username">密码:</label></div>
+                            <input type="password" class="input" name="PASSWORD" placeholder="密码" data-validate="required:请填写密码" />
+                           
+                        </div>
+                    </div>
+					<div class="form-group">
+                        <div class="field field-icon-right">
+						<div class="label"><label for="username">确认密码:</label></div>
+                            <input type="password" class="input" name="REPASSWORD" placeholder="密码" data-validate="required:请再次填写密码" />
+                           
+                        </div>
+                    </div>
+                   <!-- <div class="form-group">
+
+					 <div class="input-group padding-little-top">
+					  
+            <input type="text" class="input border-main" name="MAIL" size="30" placeholder="请填写手机号"  />
+            <span class="addbtn"><button type="button" class="button bg-main" onclick="sendCode()">获取验证码</button></span>
+          </div>
+		  
+                       
+                    </div>-->
+                 <!--<
+					 <div class="form-group">
+                        <div class="field field-icon-right">
+						<div class="label"><label for="username">密码:</label></div>
+                            <input type="password" class="input" name="PASSWORD" placeholder="密码" data-validate="required:请填写密码" />
+                           
+                        </div>
+                    </div>
+					 <div class="form-group">
+                        <div class="field field-icon-right">
+						<div class="label"><label for="username">确认密码:</label></div>
+                            <input type="password" class="input" name="REPASSWORD" placeholder="验证码" data-validate="required:请填写密码" />
+                           
+                        </div>
+                    </div>---->
+                  <!--  <div class="form-group">
+                        <div class="field">
+                            <input type="text" class="input" name="passcode" placeholder="填写右侧的验证码" data-validate="required:请填写右侧的验证码" />
+                           <img src="images/passcode.jpg" width="80" height="32" class="passcode" />
+							<button  width="80" height="32"  class="button bg-sub">辅色</button>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="panel-foot text-center"><button class="button button-block bg-main text-big">更改密码</button></div>
+            </div>
+            </form>
+			
+        <a href="__APP__/Home/Forget/index.html"><p class="text-dot">忘记密码?</p></a>
+			
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
